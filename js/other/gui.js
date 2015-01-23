@@ -7,8 +7,8 @@ var keyZones = [
 	["left", [37]],
 	["up", [38]],
 	["down", [40]],
-	["a", [88, 74]],
-	["b", [90, 81, 89]],
+	["a", [88]],
+	["b", [90]],
 	["select", [16]],
 	["start", [13]]
 ];
@@ -26,8 +26,25 @@ function windowingInitialize() {
 	windowStacks[7] = windowCreate("local_storage_listing", false);
 	windowStacks[8] = windowCreate("freeze_listing", false);
 	windowStacks[9] = windowCreate("save_importer", false);
+
+
+	//
+    //	   IMPORTANT
+    // ------------------------------------------------------
+	//
+    //   Change these if you want to set the element
+    //   in which the Emulator will run in FullScreen mode
+	//   and in minimized mode
+    //
+    //
+
 	mainCanvas = document.getElementById("mainCanvas");
 	fullscreenCanvas = document.getElementById("fullscreen");
+
+   // --------------------------------------------------------
+
+
+
 	try {
 		//Hook the GUI controls.
 		registerGUIEvents();
@@ -35,6 +52,7 @@ function windowingInitialize() {
 	catch (error) {
 		cout("Fatal windowing error: \"" + error.message + "\" file:" + error.fileName + " line: " + error.lineNumber, 2);
 	}
+
 	//Update the settings to the emulator's default:
 	document.getElementById("enable_sound").checked = settings[0];
 	document.getElementById("enable_gbc_bios").checked = settings[1];
@@ -364,6 +382,7 @@ function initPlayer() {
 	document.getElementById("port_title").style.display = "none";
 	document.getElementById("fullscreenContainer").style.display = "none";
 }
+
 function fullscreenPlayer() {
 	if (GameBoyEmulatorInitialized()) {
 		if (!inFullscreen) {
@@ -384,6 +403,7 @@ function fullscreenPlayer() {
 		cout("Cannot go into fullscreen mode.", 2);
 	}
 }
+
 function runFreeze(keyName) {
 	try {
 		windowStacks[8].hide();

@@ -165,10 +165,9 @@ body > div#fullscreenContainer {
 	z-index: 100;
 }
 body > div#fullscreenContainer > canvas#fullscreen.maximum {
-	position: static;
-	height: 100%;
-	width: 100%;
-	margin: 0;
+	position: relative;
+	display: block;
+	margin: 0 auto;
 	padding: 0;
 }
 body > div#fullscreenContainer > canvas#fullscreen.minimum {

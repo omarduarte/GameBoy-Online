@@ -58,6 +58,14 @@ var resume = function() {
 	run();
 };
 
+// pause()
+// return: null
+//
+//
+//
+// Function is alredy defined in global scope.
+
+
 // saveFreezeState()
 // returns: Array
 //
@@ -90,3 +98,21 @@ function openFreezeState(state) {
 		cout("ERROR: "+ error.message + ". Could not open the saved emulation state.", 2);
 	}
 }
+
+
+// fullScreenMode()
+// returns: null
+// 
+// Game is displayed in fullscreen.
+//
+//
+function fullScreenMode() {
+	fullscreenCanvas.className = "maximum";
+	document.getElementById("fullscreenContainer").style.display = "block";
+	$('.maximum').css('height', '100%');
+	$('.maximum').css('width', window.innerHeight * 160 / 144 + 'px');
+	gameboy.canvas = fullscreenCanvas;
+	windowStacks[0].hide();
+}
+
+
