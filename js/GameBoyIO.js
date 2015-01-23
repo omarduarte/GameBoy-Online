@@ -72,6 +72,8 @@ function clearLastEmulation() {
 		cout("No previous emulation was found to be cleared.", 0);
 	}
 }
+
+// SAVE STATE DONE HERE. IT CALLS gameboy.saveState();
 function save() {
 	if (GameBoyEmulatorInitialized()) {
 		try {
@@ -90,6 +92,7 @@ function save() {
 		cout("GameBoy core cannot be saved while it has not been initialized.", 1);
 	}
 }
+
 function saveSRAM() {
 	if (GameBoyEmulatorInitialized()) {
 		if (gameboy.cBATT) {

@@ -12,6 +12,8 @@ var keyZones = [
 	["select", [16]],
 	["start", [13]]
 ];
+
+
 function windowingInitialize() {
 	cout("windowingInitialize() called.", 0);
 	windowStacks[0] = windowCreate("GameBoy", true);
@@ -407,6 +409,7 @@ function findValue(key) {
 	}
 	return null;
 }
+
 //Wrapper for localStorage setItem, so that data can be set in various types.
 function setValue(key, value) {
 	try {
