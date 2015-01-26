@@ -14,6 +14,10 @@
  * GNU General Public License for more details.
  *
  */
+
+var CANVAS_WIDTH = 1024;
+var CANVAS_HEIGHT = 720;
+
 function GameBoyCore(canvas, ROMImage) {
 	//Params, etc...
 	this.canvas = canvas;						//Canvas DOM object for drawing out the graphics to.
@@ -264,11 +268,18 @@ function GameBoyCore(canvas, ROMImage) {
 	this.swizzledFrame = null;			//The secondary gfx buffer that holds the converted RGBA values.
 	this.canvasBuffer = null;			//imageData handle
 	this.pixelStart = 0;				//Temp variable for holding the current working framebuffer offset.
+	
+
+
 	//Variables used for scaling in JS:
-	this.onscreenWidth = this.offscreenWidth = 160;
-	this.onscreenHeight = this.offScreenheight = 144;
+	this.onscreenWidth = this.offscreenWidth = CANVAS_WIDTH;
+	this.onscreenHeight = this.offScreenheight = CANVAS_HEIGHT;
 	this.offscreenRGBCount = this.onscreenWidth * this.onscreenHeight * 4;
 	this.resizePathClear = true;
+	
+
+
+
 	//Initialize the white noise cache tables ahead of time:
 	this.intializeWhiteNoise();
 }

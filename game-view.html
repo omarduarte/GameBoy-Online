@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>GameBoy Online</title>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/game-view.css" />
+</head>
+<body>
+  
+
+  <iframe class="gameboy-color-emulator" src="gameboy-color-emulator.html" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+
+  <script>
+  $(function() {
+    $('.gameboy-color-emulator').css('width', window.innerHeight * 160 / 144 + 'px');
+
+    $( window ).resize(function() {
+      $('.gameboy-color-emulator').css('width', window.innerHeight * 160 / 144 + 'px');
+    });
+    //window.gameBoyAPI = 
+  });
+  </script>
+</body>
+</html>
